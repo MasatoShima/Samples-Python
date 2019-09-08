@@ -1,0 +1,14 @@
+/*
+Name: test.css
+Description: Style sheet for test
+Created by: Masato Shima
+Created on: 2019/09/07
+*/
+
+body {
+    background: darkred;
+    color: white;
+    font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+/* End */
