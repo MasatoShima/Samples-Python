@@ -84,7 +84,10 @@ def main() -> Dict[str, str]:
 				),
 				dcc.Dropdown(
 					id="dropdown-for-hokkaido",
-					options=[{"label": i, "value": 1} for i in data_ken_gdp_hokkaido["item"].unique()],
+					options=[
+						{"label": i, "value": i}
+						for i in data_ken_gdp_hokkaido["item"].unique()
+					],
 					value="GDP"
 				),
 				dcc.Graph(
