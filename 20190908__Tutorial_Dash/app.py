@@ -110,7 +110,7 @@ def main() -> Dict[str, str]:
 			]
 		)
 
-		app.run_server(debug=True)
+		app.run_server(port=8001, debug=True)
 
 		status = STATUS_SUCCESS
 
