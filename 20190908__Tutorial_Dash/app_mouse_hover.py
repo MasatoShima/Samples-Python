@@ -85,7 +85,11 @@ def main() -> Dict[str, str]:
 				),
 				dhc.Div(
 					dhc.H1(
-						id="add-hover-data"
+						id="add-hover-data",
+						style={
+							"textAlign": "center",
+							"color": colors["text"]
+						}
 					)
 				),
 				dcc.RadioItems(
@@ -133,7 +137,13 @@ def main() -> Dict[str, str]:
 			[dash.dependencies.Input("hokkaidoGraph", "hoverData")]
 		)
 		def return_hover_data(hover_data):
-			return json.dumps(hover_data)
+			try:
+				response = f"{hover_data['points'][0]['x']}年: {hover_data['points'][0]['y']}"
+				return response
+			except Exception as error:
+				logger.error(error)
+				logger.error(traceback.format_exc())
+				return
 
 		app.run_server(port=8003, debug=True)
 
